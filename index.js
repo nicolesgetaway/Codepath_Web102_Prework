@@ -56,7 +56,7 @@ function addGamesToPage(games) {
 
 // call the function we just defined using the correct variable
 // later, we'll call this function using a different list of games
-addGamesToPage(GAMES_JSON)
+// addGamesToPage(GAMES_JSON)
 
 /*************************************************************************************
  * Challenge 4: Create the summary statistics at the top of the page displaying the
@@ -109,21 +109,26 @@ function filterUnfundedOnly() {
     deleteChildElements(gamesContainer);
 
     // use filter() to get a list of games that have not yet met their goal
-
+    let listOfUnfundedGames = GAMES_JSON.filter ( (game) => {
+        return game.pledged < game.goal;
+    });
 
     // use the function we previously created to add the unfunded games to the DOM
-
+    addGamesToPage(listOfUnfundedGames);
 }
+// filterUnfundedOnly();
 
 // show only games that are fully funded
 function filterFundedOnly() {
     deleteChildElements(gamesContainer);
 
     // use filter() to get a list of games that have met or exceeded their goal
-
+    let listOfFundedGames = GAMES_JSON.filter ( (game) => {
+        return game.pledged >= game.goal;
+    });
 
     // use the function we previously created to add unfunded games to the DOM
-
+    addGamesToPage(listOfFundedGames);
 }
 
 // show all games
@@ -131,7 +136,7 @@ function showAllGames() {
     deleteChildElements(gamesContainer);
 
     // add all games from the JSON data to the DOM
-
+    addGamesToPage(GAMES_JSON);
 }
 
 // select each button in the "Our Games" section
@@ -140,7 +145,9 @@ const fundedBtn = document.getElementById("funded-btn");
 const allBtn = document.getElementById("all-btn");
 
 // add event listeners with the correct functions to each button
-
+unfundedBtn.addEventListener("click", filterUnfundedOnly);
+fundedBtn.addEventListener("click", filterFundedOnly);
+allBtn.addEventListener("click", showAllGames);
 
 /*************************************************************************************
  * Challenge 6: Add more information at the top of the page about the company.
@@ -151,13 +158,20 @@ const allBtn = document.getElementById("all-btn");
 const descriptionContainer = document.getElementById("description-container");
 
 // use filter or reduce to count the number of unfunded games
+const listOfUnfundedGames = GAMES_JSON.filter ( (game) => {
+    return game.pledged < game.goal;
+});
+let numUnfunded = listOfUnfundedGames.length;
 
-
-// create a string that explains the number of unfunded games using the ternary operator
-
+// create a string that explains the number of unf{unded games using the ternary operator
+let fundingStr = `A total of $${totalRaised.toLocaleString('en-US')} has been raised for ${GAMES_JSON.length} games. Currently, ${numUnfunded == 1 ? numUnfunded + " game" : numUnfunded + " games"} remain unfunded. Any amount you are able to give helps these awesome games come to life!`;
 
 // create a new DOM element containing the template string and append it to the description container
+const unfundedDescription = `
+    <p> ${fundingStr} </p>
+`;
 
+descriptionContainer.innerHTML += unfundedDescription; 
 /************************************************************************************
  * Challenge 7: Select & display the top 2 games
  * Skills used: spread operator, destructuring, template literals, sort 
@@ -171,7 +185,35 @@ const sortedGames =  GAMES_JSON.sort( (item1, item2) => {
 });
 
 // use destructuring and the spread operator to grab the first and second games
+let [firstGame, secondGame, ...others] = sortedGames;
 
 // create a new element to hold the name of the top pledge game, then append it to the correct element
-
+const topFundedName = `
+    <p> ${firstGame.name} </p>
+`;
+firstGameContainer.innerHTML += topFundedName;
 // do the same for the runner up item
+const runnerUpName = `
+    <p> ${secondGame.name} </p>
+`;
+secondGameContainer.innerHTML += runnerUpName;
+/************************************************************************************
+ * Bonus Customization: Search Bar within Nav Bar
+ */
+// function to display only game matching search or 'no game found' message
+const searchInput = document.getElementById("game-search");
+const searchBtn = document.getElementById("search-btn");
+
+// function to display game matching search
+function showSearchedGame(){
+    deleteChildElements(gamesContainer);
+    //search for game matching input
+    const query = searchInput.value;
+    let matches = GAMES_JSON.filter ( (game) => {
+        return game.name.includes(query);
+    });
+    // add games matching search to page
+    addGamesToPage(matches);
+}
+// event listener
+searchBtn.addEventListener('click', showSearchedGame);
