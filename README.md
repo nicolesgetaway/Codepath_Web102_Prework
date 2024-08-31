@@ -26,14 +26,13 @@ Here's a walkthrough of implemented features:
 
 <img src='https://github.com/nicolesgetaway/Codepath_Web102_Prework/blob/main/SMCPdemogif.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-<!-- Replace this with whatever GIF tool you used! -->
 GIF created with Windows Screen Recording and ezgif.com MP4 to GIF Converter
 
 ## Notes
 
 There were a couple challenges I faced while creating this app:
-1) Displaying Game Cards with correct formatting: When I created the game cards, the game images were appearing, however they stretched outside of the boundaries of the "card." Playing with the CSS formatting in order to fix the display issue.
-2) Implementing Bonus Customizations (specifically the Search Bar): The Search bar was a bit of a challenge to implement. While I knew how to display a search bar, getting a game card matching the inputted query took many tries and different approaches to function correctly. With the approach I used, it requires the full game title to be entered in order to return the correct result, hence why the placeholder text says "Enter full game title..."
+1) Displaying Game Cards with correct formatting: When I created the game cards, the game images were appearing, however they stretched outside of the boundaries of the "card." Playing with the CSS formatting fixed this display issue.
+2) Implementing Bonus Customizations (specifically the Search Bar): The Search bar was a bit of a challenge to implement. While I knew how to display a search bar (creating input bar and adding a search button), getting a game card matching the inputted query took many tries and different approaches to function correctly. With the approach I used, it requires the full game title to be entered in order to return the correct result, hence why the placeholder text says "Enter full game title..."
 
 ## License
 
