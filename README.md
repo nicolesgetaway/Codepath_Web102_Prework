@@ -24,7 +24,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented features:
 
-<img src='https://imgur.com/a/gkYlX70' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/nicolesgetaway/Codepath_Web102_Prework/blob/main/SMCPdemogif.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with Windows Screen Recording and ezgif.com MP4 to GIF Converter
