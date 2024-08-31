@@ -1,10 +1,10 @@
-# WEB102 Prework - *Name of App Here*
+# WEB102 Prework - SM Crowdfunding Portfolio
 
-Submitted by: **Your Name Here**
+Submitted by: Brooke Harris
 
-**Name of your app** is a website for the company Sea Monster Crowdfunding that displays information about the games they have funded.
+SM Crownfunding Portfolio is a website for the company Sea Monster Crowdfunding that displays information about the games they have funded.
 
-Time spent: **X** hours spent in total
+Time spent: 5 hours spent in total
 
 ## Required Features
 
@@ -17,28 +17,27 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 
-* [ ] List anything else that you can get done to improve the app functionality!
+* [ ] Navigation Bar that jumps to page section
+* [ ] Search Bar that displays info card of specific game
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented features:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/nicolesgetaway/Codepath_Web102_Prework/blob/main/SMCPdemogif.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+GIF created with Windows Screen Recording and ezgif.com MP4 to GIF Converter
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+There were a couple challenges I faced while creating this app:
+1) Displaying Game Cards with correct formatting: When I created the game cards, the game images were appearing, however they stretched outside of the boundaries of the "card." Playing with the CSS formatting in order to fix the display issue.
+2) Implementing Bonus Customizations (specifically the Search Bar): The Search bar was a bit of a challenge to implement. While I knew how to display a search bar, getting a game card matching the inputted query took many tries and different approaches to function correctly. With the approach I used, it requires the full game title to be entered in order to return the correct result, hence why the placeholder text says "Enter full game title..."
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2024] [Brooke Harris]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
